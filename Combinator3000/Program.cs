@@ -59,8 +59,19 @@ namespace Combinator3000
             {
                 if (CheckIfRealWord(permutatedList[i]) == true)
                 {
-                    wordCount++;
-                    realWords.Add(permutatedList[i]);
+                    var checkIfRepeats = false;
+                    for (int item = 0; item < realWords.Count; item++)
+                    {
+                        if (permutatedList[i] == realWords[item])
+                        {
+                            checkIfRepeats = true;
+                        }
+                    }
+                    if (checkIfRepeats == false)
+                    {
+                        wordCount++;
+                        realWords.Add(permutatedList[i]);
+                    }
                 }
             }
 
@@ -71,10 +82,12 @@ namespace Combinator3000
             else
             {
                 Console.WriteLine($"The string \"{str}\" can create the following words:");
+                Console.WriteLine();
                 for (int i = 0; i < realWords.Count; i++)
                 {
                     Console.WriteLine(realWords[i]);
                 }
+                Console.WriteLine();
             }
         }
 
@@ -86,7 +99,6 @@ namespace Combinator3000
             {
                 englishWordList.Add(line);
             }
-
         }
 
         private static bool CheckIfRealWord(string v)
