@@ -80,10 +80,12 @@ namespace Combinator3000
 
         private static void GatherRealWords(List<string> englishWordList)
         {
-            string[] lines = File.ReadAllLines(ListOfAllEnglishWords.txt);
+            string[] lines = File.ReadAllLines("C:\\Users\\vikto\\Google Drive\\Programs and ZIP's\\Quality of Life Scripts\\ListOfAllEnglishWords.txt");
 
             foreach (string line in lines)
-                Console.WriteLine(line);
+            {
+                englishWordList.Add(line);
+            }
 
         }
 
