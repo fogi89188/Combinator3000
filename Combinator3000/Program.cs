@@ -89,6 +89,10 @@ namespace Combinator3000
                 }
                 Console.WriteLine();
             }
+
+            //prevent app from closing
+            Console.WriteLine(" Press any key to continue . . .");
+            Console.ReadKey();
         }
 
         private static void GatherRealWords(List<string> englishWordList)
